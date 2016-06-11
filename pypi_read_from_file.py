@@ -12,6 +12,10 @@ fields = 'pkg_name downloads py2only py3 release url'
 pkg_info = collections.namedtuple('pkg_info', fields)
 FMT = '{pkg_name:30}{release:13}{py3}  {py2only}'
 
+# Change current directory to avoid exposure of control files
+# if PORT != 8000:  # if we are on Bluemix
+os.chdir('static')
+
 
 def header():
     fmt = '{:30}{:13}{}'
