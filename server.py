@@ -15,7 +15,7 @@ except ImportError:
     from SocketServer import TCPServer as Server
 
 start = time.time()
-MAX_PKGS = 200
+MAX_PKGS = 2500
 filename = 'pypi_top{}_async.json'.format(MAX_PKGS)
 
 # Read port selected by the cloud for our application
