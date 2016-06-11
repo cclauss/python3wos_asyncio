@@ -15,8 +15,10 @@ FMT = '{pkg_name:30}{release:13}{py3}  {py2only}'
 
 # Change current directory to avoid exposure of control files
 # if PORT != 8000:  # if we are on Bluemix
-os.chdir('static')
-
+try:
+    os.chdir('static_parent_dir')
+except FileNotFoundError:
+    pass
 
 def header():
     fmt = '{:30}{:13}{}'
