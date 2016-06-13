@@ -2,6 +2,7 @@
 # coding: utf-8
 
 import os
+import sys
 import time
 from pypi_top200_async import main as get_from_pypi
 from pypi_read_from_file import main as read_from_file
@@ -29,7 +30,11 @@ except FileNotFoundError:
 
 # =================================
 
-packages = get_from_pypi(MAX_PKGS)
+try:
+    max_pkgs = int(sys.argv[1])
+except (IndexError, ValueError):
+    max_pkgs = MAX_PKGS
+packages = get_from_pypi(max_pkgs)
 print(time.time() - start, 'seconds')
 with open('index.html', 'w') as out_file:
     out_file.write(create_html(read_from_file(filename)))
