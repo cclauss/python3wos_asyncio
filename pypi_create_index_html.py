@@ -21,6 +21,7 @@ pkg_info = collections.namedtuple('pkg_info', flds)
 
 def enhance_packages(packages):
     def enhance_package(package):
+        package.downloads = '{:,}'.format(package.downloads)  # add commas
         equivalent_url = EQUIVALENTS.get(package.pkg_name, '')
         has_py3_fork = equivalent_url.startswith('https://pypi.')
         return pkg_info(package.pkg_name, package.downloads, equivalent_url,
