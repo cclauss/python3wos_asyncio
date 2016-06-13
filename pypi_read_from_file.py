@@ -4,11 +4,12 @@
 import collections
 import json
 import os
+import sys
 import time
 
 start = time.time()
 
-FILENAME = 'pypi_top200_async.json'
+MAX_PKGS = 200
 fields = 'pkg_name downloads py2only py3 release url'
 pkg_info = collections.namedtuple('pkg_info', fields)
 FMT = '{pkg_name:30}{release:13}{py3}  {py2only}'
@@ -26,7 +27,8 @@ def header():
                       fmt.format('=' * 11, '=' * 6, '=' * 9)))
 
 
-def main(filename=FILENAME):
+def main(max_pkgs=MAX_PKGS):
+    filename = 'pypi_top{}_async.json'.format(max_pkgs)
     with open(filename) as in_file:
         tuples = json.load(in_file)
 
@@ -36,7 +38,11 @@ def main(filename=FILENAME):
 
 
 if __name__ == '__main__':
-    packages = main()
+    try:
+        max_pkgs = int(sys.argv[1])
+    except (IndexError, ValueError):
+        max_pkgs = MAX_PKGS
+    packages = main(max_pkgs)
     print(time.time() - start, 'seconds')
 
     print(header())

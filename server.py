@@ -33,11 +33,10 @@ try:
     max_pkgs = int(sys.argv[1])
 except (IndexError, ValueError):
     max_pkgs = MAX_PKGS
-filename = 'pypi_top{}_async.json'.format(max_pkgs)
 packages = get_from_pypi(max_pkgs)
 print(time.time() - start, 'seconds')
 with open('index.html', 'w') as out_file:
-    out_file.write(create_html(read_from_file(filename)))
+    out_file.write(create_html(read_from_file(max_pkgs)))
 print(time.time() - start, 'seconds')
 
 # =================================

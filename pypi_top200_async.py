@@ -30,7 +30,7 @@ def get_pkg_info(pkg_name, downloads=0):
         release = client.package_releases(pkg_name)[0]
     except IndexError:  # marionette-transport, ll-orasql, and similar
         print(pkg_name, 'has no releases in PyPI!!')
-        return pkg_info(pkg_name, 'PyPI error!!', False, False, '', '')
+        return pkg_info(pkg_name, downloads, False, False, 'PyPI error!!', '')
     troves = '\n'.join(client.release_data(pkg_name, release)['classifiers'])
     py2only = py2_only_classifier in troves
     py3 = py3_classifier in troves

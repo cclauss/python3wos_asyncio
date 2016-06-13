@@ -11,6 +11,11 @@ from jinja2 import Environment, FileSystemLoader
 
 start = time.time()
 
+try:
+    os.chdir('static_parent_dir')
+except FileNotFoundError:
+    pass
+
 with open('equivalent_modules.json') as in_file:
     EQUIVALENTS = json.load(in_file)
 
@@ -73,7 +78,7 @@ def main(packages):
 
 if __name__ == '__main__':
     from pypi_read_from_file import main as get_packages
-    html = main(get_packages())
+    html = main(get_packages(2500))
     print(html)
     print(time.time() - start, 'seconds')
     with open('index.html', 'w') as out_file:
