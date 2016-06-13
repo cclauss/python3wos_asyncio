@@ -17,7 +17,6 @@ except ImportError:
 
 start = time.time()
 MAX_PKGS = 200
-filename = 'pypi_top{}_async.json'.format(MAX_PKGS)
 
 # Read port selected by the cloud for our application
 PORT = int(os.getenv('PORT', 8000))
@@ -34,6 +33,7 @@ try:
     max_pkgs = int(sys.argv[1])
 except (IndexError, ValueError):
     max_pkgs = MAX_PKGS
+filename = 'pypi_top{}_async.json'.format(max_pkgs)
 packages = get_from_pypi(max_pkgs)
 print(time.time() - start, 'seconds')
 with open('index.html', 'w') as out_file:
