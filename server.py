@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
+import multiprocessing
 import os
 import sys
 import time
@@ -29,15 +30,26 @@ except FileNotFoundError:
 
 # =================================
 
-try:
-    max_pkgs = int(sys.argv[1])
-except (IndexError, ValueError):
-    max_pkgs = MAX_PKGS
-packages = get_from_pypi(max_pkgs)
-print(time.time() - start, 'seconds')
-with open('index.html', 'w') as out_file:
-    out_file.write(create_html(read_from_file(max_pkgs)))
-print(time.time() - start, 'seconds')
+def create_html_from_pypi(max_pkgs=MAX_PKGS):
+    p = multiprocessing.current_process()
+    print('Starting:', p.name, p.pid)
+    sys.stdout.flush()
+
+    try:
+        max_pkgs = int(sys.argv[1])
+    except (IndexError, ValueError):
+        max_pkgs = MAX_PKGS
+    packages = get_from_pypi(max_pkgs)
+    print(time.time() - start, 'seconds')
+    with open('index.html', 'w') as out_file:
+        out_file.write(create_html(read_from_file(max_pkgs)))
+    print(time.time() - start, 'seconds')
+
+    print('Exiting :', p.name, p.pid)
+    sys.stdout.flush()
+    return 42
+
+multiprocessing.Process(name='PyPI Scan', target=create_html_from_pypi).start()
 
 # =================================
 
