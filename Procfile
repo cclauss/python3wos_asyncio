@@ -1,1 +1,1 @@
-web: python server.py 1500
+web: python server.py 3500
