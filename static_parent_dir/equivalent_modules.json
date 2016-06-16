@@ -12,9 +12,11 @@
     "python-ldap": "https://pypi.python.org/pypi/pyldap",
     "python-openid": "https://github.com/necaris/python3-openid",
     "simplejson": "https://docs.python.org/3/library/json.html",
+    "ssh": "https://pypi.python.org/pypi/paramiko",
     "ssl": "https://docs.python.org/3/library/ssl.html",
     "suds": "https://pypi.python.org/pypi/suds-jurko",
     "unittest2": "https://docs.python.org/3/library/unittest.html",
-    "uuid": "https://docs.python.org/3/library/uuid.html"
+    "uuid": "https://docs.python.org/3/library/uuid.html",
+    "wsgiref": "https://docs.python.org/3/library/wsgiref.html"
 }
 
