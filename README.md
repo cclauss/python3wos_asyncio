@@ -16,19 +16,19 @@ Static webpages are also generated just to get a sense of how Python 3 compatibi
 [Top 1800](http://python3wos.mybluemix.net/index_1800.html)
 * [Top 2000](http://python3wos.mybluemix.net/index_2000.html), 
 [Top 2200](http://python3wos.mybluemix.net/index_2200.html), 
-[Top 2400](http://python3wos.mybluemix.net/index_2400.html),  
+[Top 2400](http://python3wos.mybluemix.net/index_2400.html), 
 [Top 2600](http://python3wos.mybluemix.net/index_2600.html), 
-[Top 2800](http://python3wos.mybluemix.net/index_2800.html),  
-[Top 3000](http://python3wos.mybluemix.net/index_3000.html),  
-[Top 3200](http://python3wos.mybluemix.net/index_3200.html),  
-[Top 3400](http://python3wos.mybluemix.net/index_3400.html),  
+[Top 2800](http://python3wos.mybluemix.net/index_2800.html), 
+[Top 3000](http://python3wos.mybluemix.net/index_3000.html), 
+[Top 3200](http://python3wos.mybluemix.net/index_3200.html), 
+[Top 3400](http://python3wos.mybluemix.net/index_3400.html), 
 [Top 3600](http://python3wos.mybluemix.net/index_3600.html)
-* < 50% ;-(  [Top 3800](http://python3wos.mybluemix.net/index_3800.html)
-[Top 4000](http://python3wos.mybluemix.net/index_4000.html),  
-[Top 4200](http://python3wos.mybluemix.net/index_4200.html),  
-[Top 4400](http://python3wos.mybluemix.net/index_4400.html),  
+* < 50% ;-(  [Top 3800](http://python3wos.mybluemix.net/index_3800.html), 
+[Top 4000](http://python3wos.mybluemix.net/index_4000.html), 
+[Top 4200](http://python3wos.mybluemix.net/index_4200.html), 
+[Top 4400](http://python3wos.mybluemix.net/index_4400.html), 
 [Top 4600](http://python3wos.mybluemix.net/index_4600.html), 
-[Top 4800](http://python3wos.mybluemix.net/index_4800.html)
+[Top 4800](http://python3wos.mybluemix.net/index_4800.html), 
 [Top 5000](http://python3wos.mybluemix.net/index_5000.html).
 
 I plan to roll these changes back into upstream and then delete this repo.  I just needed a place to experiment with ideas.
