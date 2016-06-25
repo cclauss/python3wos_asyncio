@@ -4,10 +4,10 @@
 import aiohttp
 import asyncio
 import collections
-import json
 import time
 from xmlrpc.client import ServerProxy
 
+from pypi_create_index_html import main as create_index
 from pypi_io_utils import write_packages
 
 MAX_PKGS = 5000  # or try 1000
@@ -35,8 +35,7 @@ async def fetch_json(session, url):
 
 
 async def get_package_info(session, pkg_name, downloads):
-    d = await fetch_json(session, PYPI_FMT.format(pkg_name))
-    info = d['info']
+    info = await fetch_json(session, PYPI_FMT.format(pkg_name))['info']
     classifiers = '\n'.join(info['classifiers'])
     py2only = py2_only_classifier in classifiers
     py3 = py3_classifier in classifiers
@@ -50,6 +49,7 @@ def create_tasks(session, max_pkgs=MAX_PKGS):
     return [get_package_info(session, pkg_name, downloads)
             for pkg_name, downloads in client.top_packages(max_pkgs)]
 
+
 async def get_packages_info(max_pkgs=MAX_PKGS):
     fmt = 'Gathering Python 3 support info on the top {} PyPI packages...'
     print(fmt.format(max_pkgs))
@@ -59,25 +59,28 @@ async def get_packages_info(max_pkgs=MAX_PKGS):
         while tasks:
             current_block, tasks = tasks[:200], tasks[200:]
             packages += await asyncio.gather(*current_block)
-            if len(packages) == 200:
-                from pypi_create_index_html import main as create_index
-                with open('index.html', 'w') as out_file:
-                    out_file.write(create_index(packages))
+            html = create_index(packages).splitlines()
+            html = '\n'.join(line.rstrip() for line in html if line.strip())
             filename = 'index_{:0>4}.html'.format(len(packages))
             with open(filename, 'w') as out_file:
-                out_file.write(create_index(packages))
-            print('.')
+                out_file.write(html)
+            if len(packages) == 200:
+                with open('index.html', 'w') as out_file:
+                    out_file.write(html)
+            status = html.partition('Status: ')[-1].partition('  ')[0]
+            print('{:>72}'.format(status))
     return packages
 
 
 def get_from_pypi(max_pkgs=MAX_PKGS):
-    return asyncio.get_event_loop().run_until_complete(get_packages_info(MAX_PKGS))
+    loop = asyncio.get_event_loop()
+    return loop.run_until_complete(get_packages_info(max_pkgs))
 
 
 if __name__ == '__main__':
     start = time.time()
     packages = get_from_pypi(MAX_PKGS)
-    print(time.time() - start, 'seconds')  # ~ 32 sec if asyncio else ~ 105 sec
+    print(time.time() - start, 'seconds')  # 5000 packages in 25 seconds on Bluemix
     write_packages(packages)
     print(header())
     for package in packages:
@@ -90,5 +93,7 @@ if __name__ == '__main__':
     if losers:
         print(header())
         print('\n'.join(FMT.format(**package._asdict()) for package in losers))
+    else:
+        print('Nirvana has been achieved!')
 
     print(time.time() - start, 'seconds')
