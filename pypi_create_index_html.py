@@ -77,8 +77,8 @@ def main(packages):
 
 
 if __name__ == '__main__':
-    from pypi_read_from_file import main as get_packages
-    html = main(get_packages(2500))
+    from pypi_io_utils import read_packages
+    html = main(read_packages(5000))
     print(html)
     print(time.time() - start, 'seconds')
     with open('index.html', 'w') as out_file:

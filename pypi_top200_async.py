@@ -8,7 +8,7 @@ import json
 import time
 from xmlrpc.client import ServerProxy
 
-from pypi_read_from_file import write_packages
+from pypi_io_utils import write_packages
 
 MAX_PKGS = 5000  # or try 1000
 PYPI_URL = 'https://pypi.python.org/pypi'
@@ -50,7 +50,7 @@ def create_tasks(session, max_pkgs=MAX_PKGS):
     return [get_package_info(session, pkg_name, downloads)
             for pkg_name, downloads in client.top_packages(max_pkgs)]
 
-async def main(max_pkgs=MAX_PKGS):
+async def get_packages_info(max_pkgs=MAX_PKGS):
     fmt = 'Gathering Python 3 support info on the top {} PyPI packages...'
     print(fmt.format(max_pkgs))
     packages = []
@@ -70,9 +70,13 @@ async def main(max_pkgs=MAX_PKGS):
     return packages
 
 
+def get_from_pypi(max_pkgs=MAX_PKGS):
+    return asyncio.get_event_loop().run_until_complete(get_packages_info(MAX_PKGS))
+
+
 if __name__ == '__main__':
     start = time.time()
-    packages = asyncio.get_event_loop().run_until_complete(main(MAX_PKGS))
+    packages = get_from_pypi(MAX_PKGS)
     print(time.time() - start, 'seconds')  # ~ 32 sec if asyncio else ~ 105 sec
     write_packages(packages)
     print(header())

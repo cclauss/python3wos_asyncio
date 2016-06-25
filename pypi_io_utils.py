@@ -9,7 +9,7 @@ import time
 
 start = time.time()
 
-MAX_PKGS = 200
+MAX_PKGS = 5000
 fields = 'pkg_name downloads py2only py3 release url'
 pkg_info = collections.namedtuple('pkg_info', fields)
 FMT = '{pkg_name:30}{release:13}{py3}  {py2only}'
@@ -28,14 +28,14 @@ def header():
                       fmt.format('=' * 11, '=' * 6, '=' * 9)))
 
 
-def main(max_pkgs=MAX_PKGS):
+def read_packages(max_pkgs=MAX_PKGS):
     filename = 'pypi_top{}_async.json'.format(max_pkgs)
     with open(filename) as in_file:
         tuples = json.load(in_file)
 
     assert tuples, 'No data read from {}.'.format(filename)
     print('{} pkg_info records read from {}.'.format(len(tuples), filename))
-    return [pkg_info(*x) for x in tuples]
+    return [pkg_info(*x) for x in tuples]  # convert tuples into namedtuples
 
 
 def write_packages(packages):
@@ -54,7 +54,7 @@ if __name__ == '__main__':
         max_pkgs = int(sys.argv[1])
     except (IndexError, ValueError):
         max_pkgs = MAX_PKGS
-    packages = main(max_pkgs)
+    packages = read_packages(max_pkgs)
     print(time.time() - start, 'seconds')
 
     print(header())

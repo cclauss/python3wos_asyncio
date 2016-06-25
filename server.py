@@ -5,8 +5,8 @@ import multiprocessing
 import os
 import sys
 import time
-from pypi_top200_async import main as get_from_pypi
-from pypi_read_from_file import main as read_from_file
+from pypi_top200_async import get_from_pypi
+#from pypi_io_utils import read_packages
 from pypi_create_index_html import main as create_html
 
 try:
@@ -30,6 +30,7 @@ except FileNotFoundError:
 
 # =================================
 
+
 def create_html_from_pypi(max_pkgs=MAX_PKGS):
     p = multiprocessing.current_process()
     print('Starting:', p.name, p.pid)
@@ -40,9 +41,9 @@ def create_html_from_pypi(max_pkgs=MAX_PKGS):
     except (IndexError, ValueError):
         max_pkgs = MAX_PKGS
     packages = get_from_pypi(max_pkgs)
-    print(time.time() - start, 'seconds')
+    print(time.time() - start, 'seconds,', len(packages), 'packages.')
     with open('index.html', 'w') as out_file:
-        out_file.write(create_html(read_from_file(max_pkgs)))
+        out_file.write(create_html(packages))  # read_packages(max_pkgs)))
     print(time.time() - start, 'seconds')
 
     print('Exiting :', p.name, p.pid)
