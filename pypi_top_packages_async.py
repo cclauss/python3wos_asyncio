@@ -35,7 +35,7 @@ async def fetch_json(session, url):
 
 
 async def get_package_info(session, pkg_name, downloads):
-    info = await fetch_json(session, PYPI_FMT.format(pkg_name))['info']
+    info = (await fetch_json(session, PYPI_FMT.format(pkg_name)))['info']
     classifiers = '\n'.join(info['classifiers'])
     py2only = py2_only_classifier in classifiers
     py3 = py3_classifier in classifiers
