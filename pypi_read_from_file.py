@@ -21,6 +21,7 @@ try:
 except FileNotFoundError:
     pass
 
+
 def header():
     fmt = '{:30}{:13}{}'
     return '\n'.join((fmt.format('Module name', 'Latest', 'Python 3?'),
@@ -35,6 +36,17 @@ def main(max_pkgs=MAX_PKGS):
     assert tuples, 'No data read from {}.'.format(filename)
     print('{} pkg_info records read from {}.'.format(len(tuples), filename))
     return [pkg_info(*x) for x in tuples]
+
+
+def write_packages(packages):
+    if packages:
+        pkg_count = len(packages)
+        filename = 'pypi_top{}_async.json'.format(pkg_count)
+        with open(filename, 'w') as out_file:
+            json.dump(packages, out_file)  # , indent=2)
+        print('Info for {} packages written to {}'.format(pkg_count, filename))
+    else:
+        print('No data was written!!')
 
 
 if __name__ == '__main__':
