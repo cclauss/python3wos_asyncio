@@ -70,7 +70,7 @@ async def main(max_pkgs=MAX_PKGS):
     return packages
 
 
-f __name__ == '__main__':
+if __name__ == '__main__':
     start = time.time()
     packages = asyncio.get_event_loop().run_until_complete(main(MAX_PKGS))
     print(time.time() - start, 'seconds')  # ~ 32 sec if asyncio else ~ 105 sec
