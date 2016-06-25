@@ -1,3 +1,11 @@
+# cclauss specific files we will generate
+static_parent_dir/index_0*
+static_parent_dir/index_1*
+static_parent_dir/index_2*
+static_parent_dir/index_3*
+static_parent_dir/index_4*
+static_parent_dir/index_5*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
