@@ -2,7 +2,7 @@
 
 __Which of the top 5,000 most downloadd PyPI package are Python 3 compatible?__  The code in this repo should be running at: http://python3wos.mybluemix.net
 
-This is Python 3 version of https://github.com/ubershmekel/python3wos which adds `asyncio` in order to gather the Python 3 support data on the Top 5,000 packages on PyPI.  Asyncio lowers the time required to gather data on 5000 PyPI packages to about 25 seconds on Bluemix.
+This is Python 3 version of https://github.com/ubershmekel/python3wos which adds `asyncio` in order to gather the Python 3 support data from PyPI [trove classifiers].  The use of asyncio lowers the time required to gather data on 5,000 PyPI packages to about 25 seconds on [Bluemix](http://www.ibm.com/cloud-computing/bluemix/).
 
 Static webpages are also generated just to get a sense of how Python 3 compatibility drops on larger slices:
 * [Top 200](http://python3wos.mybluemix.net/index_0200.html), 
