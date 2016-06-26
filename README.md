@@ -1,6 +1,6 @@
 # python3wos_asyncio
 
-The code in this repo should be running at: http://python3wos.mybluemix.net
+__Which of the top 5,000 most downloadd PyPI package are Python 3 compatible?__  The code in this repo should be running at: http://python3wos.mybluemix.net
 
 This is Python 3 version of https://github.com/ubershmekel/python3wos which adds `asyncio` in order to gather the Python 3 support data on the Top 5,000 packages on PyPI.  Asyncio lowers the time required to gather data on 5000 PyPI packages to about 25 seconds on Bluemix.
 
