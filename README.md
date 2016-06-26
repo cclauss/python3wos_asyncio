@@ -23,7 +23,7 @@ Static webpages are also generated just to get a sense of how Python 3 compatibi
 [Top 3200](http://python3wos.mybluemix.net/index_3200.html), 
 [Top 3400](http://python3wos.mybluemix.net/index_3400.html), 
 [Top 3600](http://python3wos.mybluemix.net/index_3600.html)
-* < 50% ;-(  [Top 3800](http://python3wos.mybluemix.net/index_3800.html), 
+* < 50% Python 3 compatible ;-(  [Top 3800](http://python3wos.mybluemix.net/index_3800.html), 
 [Top 4000](http://python3wos.mybluemix.net/index_4000.html), 
 [Top 4200](http://python3wos.mybluemix.net/index_4200.html), 
 [Top 4400](http://python3wos.mybluemix.net/index_4400.html), 
