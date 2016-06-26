@@ -4,7 +4,7 @@ __Which of the top 5,000 most downloaded [PyPI](http://pypi.python.org) packages
 
 The code in this repo should be running at: http://python3wos.mybluemix.net
 
-This is Python 3 version of https://github.com/ubershmekel/python3wos which adds `asyncio` in order to determine Python 3 support data by reading each package's `Programming Language :: Python :: [...]` [trove classifiers](https://pypi.python.org/pypi?%3Aaction=list_classifiers) from PyPI.  The use of asyncio lowers the time required to gather data on 5,000 PyPI packages to about 25 seconds on [Bluemix](http://www.ibm.com/cloud-computing/bluemix/).
+This is Python 3 version of https://github.com/ubershmekel/python3wos which adds `asyncio` in order to determine Python 3 support data by reading each package's `Programming Language :: Python :: [...]` [trove classifiers](https://pypi.python.org/pypi?%3Aaction=list_classifiers) from PyPI.  The use of asyncio substantially lowers the time required to gather data on 5,000 PyPI packages to about 25 seconds on [Bluemix](http://www.ibm.com/cloud-computing/bluemix/).
 
 [Top 200](http://python3wos.mybluemix.net/) is the detault webpage but static webpages are also generated so you can get a sense of how Python 3 compatibility drops on larger slices:
 * [Top 200](http://python3wos.mybluemix.net/index_0200.html), 
@@ -33,4 +33,4 @@ This is Python 3 version of https://github.com/ubershmekel/python3wos which adds
 [Top 4800](http://python3wos.mybluemix.net/index_4800.html), 
 [Top 5000](http://python3wos.mybluemix.net/index_5000.html).
 
-I plan to roll these changes back into upstream and then delete this repo.  I just needed a place to experiment with ideas.
+I plan to roll these changes back into upstream and then delete this repo.  I just needed a place to experiment with asyncio.
