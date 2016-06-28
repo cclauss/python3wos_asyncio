@@ -6,7 +6,7 @@ The code in this repo should be running at: http://python3wos.mybluemix.net
 
 This is Python 3 version of https://github.com/ubershmekel/python3wos which adds `asyncio` in order to determine Python 3 support data by reading each package's `Programming Language :: Python :: [...]` [trove classifiers](https://pypi.python.org/pypi?%3Aaction=list_classifiers) from PyPI.  The use of asyncio substantially lowers the time required to gather data on 5,000 PyPI packages to about 25 seconds on [Bluemix](http://www.ibm.com/cloud-computing/bluemix/).
 
-[Top 200](http://python3wos.mybluemix.net/) is the detault webpage but static webpages are also generated so you can get a sense of how Python 3 compatibility drops on larger slices:
+[Top 200](http://python3wos.mybluemix.net/) is the default webpage but static webpages are also generated so you can get a sense of how Python 3 compatibility drops on larger slices:
 * [Top 200](http://python3wos.mybluemix.net/index_0200.html), 
 [Top 400](http://python3wos.mybluemix.net/index_0400.html), 
 [Top 600](http://python3wos.mybluemix.net/index_0600.html), 
