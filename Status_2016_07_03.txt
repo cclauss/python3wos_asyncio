@@ -1,0 +1,25 @@
+  184/200 or 92.00% of these packages (or their forks) support Python 3.
+  353/400 or 88.25% of these packages (or their forks) support Python 3.
+  491/600 or 81.83% of these packages (or their forks) support Python 3.
+  615/800 or 76.88% of these packages (or their forks) support Python 3.
+ 725/1000 or 72.50% of these packages (or their forks) support Python 3.
+ 826/1200 or 68.83% of these packages (or their forks) support Python 3.
+ 914/1400 or 65.29% of these packages (or their forks) support Python 3.
+1015/1600 or 63.44% of these packages (or their forks) support Python 3.
+1109/1800 or 61.61% of these packages (or their forks) support Python 3.
+1186/2000 or 59.30% of these packages (or their forks) support Python 3.
+1279/2200 or 58.14% of these packages (or their forks) support Python 3.
+1356/2400 or 56.50% of these packages (or their forks) support Python 3.
+1426/2600 or 54.85% of these packages (or their forks) support Python 3.
+1508/2800 or 53.86% of these packages (or their forks) support Python 3.
+1588/3000 or 52.93% of these packages (or their forks) support Python 3.
+1667/3200 or 52.09% of these packages (or their forks) support Python 3.
+1733/3400 or 50.97% of these packages (or their forks) support Python 3.
+1815/3600 or 50.42% of these packages (or their forks) support Python 3.
+1889/3800 or 49.71% of these packages (or their forks) support Python 3.
+1955/4000 or 48.88% of these packages (or their forks) support Python 3.
+2031/4200 or 48.36% of these packages (or their forks) support Python 3.
+2105/4400 or 47.84% of these packages (or their forks) support Python 3.
+2173/4600 or 47.24% of these packages (or their forks) support Python 3.
+2251/4800 or 46.90% of these packages (or their forks) support Python 3.
+2327/5000 or 46.54% of these packages (or their forks) support Python 3.
