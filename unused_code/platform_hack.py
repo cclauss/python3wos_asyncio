@@ -29,7 +29,7 @@ python_version() = 3.5.0
 python_version_tuple() = ('3', '5', '0')
 release() = 3.19.0-25-generic
 system() = Linux
-uname() = uname_result(system='Linux', node='19i82gna94j', release='3.19.0-25-generic', version='#26~14.04.1-Ubuntu SMP Fri Jul 24 21:16:20 UTC 2015', machine='x86_64', processor='x86_64')
+uname() = uname_result(system='Linux', node='19i82gna94j', release='3.19.0-25-generic', version='#26~14.04.1-Ubuntu SMP Fri Jul 24 21:16:20 UTC 2015', machine='x86_64', processor='x86_64')  # flake8: noqa
 version() = #26~14.04.1-Ubuntu SMP Fri Jul 24 21:16:20 UTC 2015
 '''
 print('sys:')
