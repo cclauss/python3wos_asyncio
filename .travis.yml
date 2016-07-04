@@ -4,7 +4,7 @@ python:
 #   - "3.5.2"    # Errors trying to install Python 3.5.2
 #   - "2.7"      # Python 2.7.9 and pip 6.0.7
     - "3.5"      # Python 3.5.0 and pip 7.1.2
-    - "nightly"  # Python 3.6.0a0 and pip 7.1.2  # currently points to 3.6-dev
+#   - "nightly"  # Python 3.6.0a0 and pip 7.1.2  # currently points to 3.6-dev
 # command to install dependencies
 install:
 #   - pip install --upgrade pip  # pip 6.0.8 vs. pip 8.1.2
