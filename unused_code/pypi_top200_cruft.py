@@ -35,7 +35,7 @@ async def get_packages_info(max_pkgs=MAX_PKGS):  # ~ 32 secs for 200 pkgs on my 
 #     return ServerProxy(PYPI_URL).top_packages(max_pkgs)
 
 packages_info = []
-  '''
+'''
   results = []
   tasks = ServerProxy(PYPI_URL).top_packages(max_pkgs)
   while names_and_downloads:
@@ -85,4 +85,4 @@ packages_info = []
   else:
       print('No data was written!!')
   return packages
- '''
+'''
