@@ -50,18 +50,18 @@ def enhance_packages(packages):
 
 # =====
 
-def build_template_values(packages):
+def build_template_values(packages, data_datetime=None):
+    data_datetime = data_datetime or datetime.datetime.utcnow()
     total = len(packages)
     py3_count = len([pkg for pkg in packages if pkg.py3 or pkg.equivalent_url])
     py3_percent = py3_count / total if total else 0
-    timestamp = '{:%Y-%m-%d %H:%M} UTC'.format(datetime.datetime.utcnow())
     return {'title': 'Python 3 Wall of ' + ('Shame' if py3_percent < 0.5 else
                                             'Superpowers'),
             'py3_days': '{:,}'.format((datetime.date.today() -
                                        datetime.date(2008, 12, 3)).days),
             'packages': packages,  # [pkg._asdict() for pkg in packages],
             'count': '{}/{} or {:.2%}'.format(py3_count, total, py3_percent),
-            'min_time': timestamp}
+            'min_time': '{:%Y-%m-%d %H:%M} UTC'.format(data_datetime)}
 
 
 def get_html(packages):  # uncomment the next line to see the Wall of Shame!

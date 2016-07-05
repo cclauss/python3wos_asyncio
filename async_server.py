@@ -1,32 +1,71 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
-import asyncio
 from aiohttp import web
 import aiohttp_jinja2
+import asyncio
+import functools
 import jinja2
-import webbrowser
-# import multiprocessing
 import os
-# import sys
+import sys
 import time
+import webbrowser
 
 from pypi_top_packages_async import get_from_pypi
-from pypi_create_index_html import enhance_packages, build_template_values
+from pypi_top_packages_async import get_packages_info
 
-# from http.server import SimpleHTTPRequestHandler as Handler
-# from http.server import HTTPServer as Server
+# from pypi_create_index_html import enhance_packages
+from pypi_create_index_html import build_template_values
 
-start = time.time()
-MAX_PKGS = 200
+START_TIME = time.time()
+MAX_PKGS = 200  # user can override this by entering a value on the commandline
+PORT = int(os.getenv('PORT', 8000))  # Cloud will provide PORT id
 
-# Read port selected by the cloud for our application
-PORT = int(os.getenv('PORT', 8000))
-# Change current directory to avoid exposure of control files
+# Immediately change current directory to avoid exposure of control files
 try:
     os.chdir('static_parent_dir')
 except FileNotFoundError:
     pass
+
+try:  # Did the user enter a number on the commandline?
+    max_pkgs = int(sys.argv[1])
+except (IndexError, ValueError):
+    max_pkgs = MAX_PKGS
+
+app = web.Application()
+'''
+app['data_datetime'] = None  # set in get_from_pypi
+app['max_pkgs'] = max_pkgs   # read in get_from_pypi
+app['packages'] = None       # set in get_from_pypi
+# app['port'] = PORT = int(os.getenv('PORT', 8000))  # Cloud will provide PORT
+app['start'] = START_TIME    # read in get_from_pypi
+'''
+
+'''
+def get_from_pyp(app, max_pkgs, START_TIME):
+    for i in range(15):
+        app['packages'] = (i + 1) * 200
+        app['data_datetime'] = time.time()
+        print('{packages}, {data_datetime}'.format(**app))
+        # print(app.__dict__)
+        # print(app._asdict())
+        # asyncio.sleep(1)
+    return max_pkgs, START_TIME
+'''
+
+
+def done_callback(fut, app=None):
+    print('done_callback:', time.time() - START_TIME)
+    app = app or {}
+    app['packages'], app['data_datetime'] = fut.result()
+
+# fut = app.loop.run_in_executor(None, get_from_pypi, app.loop, max_pkgs, START_TIME)
+fut = asyncio.run_coroutine_threadsafe(get_packages_info(max_pkgs, START_TIME),
+                                       app.loop)
+fut.add_done_callback(functools.partial(done_callback, app=app))
+
+# Read port selected by the cloud for our application
+# PORT = int(os.getenv('PORT', 8000))
 
 '''
 def create_html_from_pypi(max_pkgs=MAX_PKGS):
@@ -53,66 +92,41 @@ def create_html_from_pypi(max_pkgs=MAX_PKGS):
 # start a separate process to gather data from PyPI in the background
 multiprocessing.Process(name='PyPI Scan', target=create_html_from_pypi).start()
 '''
-# while the main process runs a webserver
-# httpd = Server(("", PORT), Handler)
-# if PORT == 8000:  # we are running the server on localhost
-#    import webbrowser
-#    webbrowser.open('localhost:8000')
-# try:
-#    print("Start serving at port %i" % PORT)
-#    httpd.serve_forever()
-# except KeyboardInterrupt:
-#    pass
-# httpd.server_close()
-
-
-def launch_browser(host_and_port='localhost:8081'):
-    asyncio.sleep(0.1)  # give the server a second to come up
-    webbrowser.open(host_and_port)
 
 
 async def index_handler(request):
-    '''
-    try:
+    try:  # return index.html if it exists
         with open('index.html') as in_file:
-            return web.Response(text=in_file.read())
+            return web.Response(body=in_file.read().encode())
     except FileNotFoundError:
         return web.Response(text='Processing: Please refresh this page')
-    '''
-    # print(request)
-    # print(dir(request))
-    return web.Response(body=b'Hello, world')
-
-
-async def other_handler(request):
-    value = request.match_info.get('value', 'Anonymous')
-    txt = "Hello, {}".format(value)
-    return web.Response(text=txt)
-
-d = get_from_pypi(200)
-print('On your mark...')
-# print(str(d)[:100])
-d = enhance_packages(d)
-print('Get set...')
-d = build_template_values(d)
-print('Go!')
 
 
 @aiohttp_jinja2.template('index_db.html')
 async def handler(request):
-    return d  # get_from_pypi(200)
-    # return await get_packages_info(200)
+    packages = request.app.get('packages', None)
+    if not packages:  # if data capture still ongoing, default to index.html
+        return await index_handler(request)
+    max_pkgs = request.match_info.get('max_pkgs', '').split('.')[0]
+    max_pkgs = ''.join(c for c in max_pkgs if c.isdigit())
+    max_pkgs = max(int(max_pkgs) if max_pkgs else 0, 200)
+    return build_template_values(packages[:max_pkgs],
+                                 request.app.get('data_datetime'))
 
 
-def run_webserver(port=8080):
-    app = web.Application()
+def run_webserver(app, port=PORT):
     aiohttp_jinja2.setup(app, loader=jinja2.FileSystemLoader(os.curdir))
     app.router.add_route('GET', '/', index_handler)
-    app.router.add_route('GET', '/{value}', handler)
-    web.run_app(app, port=port)
+    app.router.add_route('GET', '/{max_pkgs}', handler)
+    app.router.add_static('/static/', path='./static', name='static')
+    web.run_app(app, port=PORT)
 
 
-if True:  # PORT == 8000:  # we are running the server on localhost
-    loop = asyncio.get_event_loop()
-    loop.run_in_executor(None, launch_browser, 'localhost:{}'.format(PORT))
-run_webserver(port=PORT)
+def launch_browser(port=PORT):
+    asyncio.sleep(0.1)  # give the server a tenth of a second to come up
+    webbrowser.open('localhost:{}'.format(port))
+
+
+if PORT == 8000:  # we are running the server on localhost
+    app.loop.run_in_executor(None, launch_browser, PORT)
+run_webserver(app, port=PORT)
