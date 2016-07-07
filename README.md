@@ -5,11 +5,11 @@
 
 The code in this repo should be running on Bluemix at: http://python3wos.mybluemix.net (add /200 thru /5000 to the URL).
 
-__92% of the [top 200](http://python3wos.mybluemix.net/200) most downloaded [PyPI](http://pypi.python.org) packages (or their forks) support Python 3.__
+__92% of the top [200](http://python3wos.mybluemix.net/200) most downloaded [PyPI](http://pypi.python.org) packages (or their forks) support Python 3.__
 
-__Half of the [top 3,748](http://python3wos.mybluemix.net/3748) most downloaded PyPI pacakges (or their forks) support Python 3.__
+__Half of the top [3,748](http://python3wos.mybluemix.net/3748) most downloaded PyPI pacakges (or their forks) support Python 3.__
 
-__Which of the [top 5,000](http://python3wos.mybluemix.net/5000) most downloaded PyPI packages are Python 3 compatible?__
+__Which of the top [5,000](http://python3wos.mybluemix.net/5000) most downloaded PyPI packages are Python 3 compatible?__
 
 This is Python 3.5+ version of https://github.com/ubershmekel/python3wos which adds `asyncio` in order to determine Python 3 support data by reading each package's `Programming Language :: Python :: [...]` [trove classifiers](https://pypi.python.org/pypi?%3Aaction=list_classifiers) from PyPI.  The use of asyncio substantially lowers the time required to gather data on 5,000 PyPI packages to about 25 seconds on [Bluemix](http://www.ibm.com/cloud-computing/bluemix/).
 
