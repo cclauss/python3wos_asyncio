@@ -1,6 +1,6 @@
 # Python 3 Wall of Superpowers
-![alt text](https://img.shields.io/badge/Python-3.5.2_or_better-blue.svg "Python 3.5.2 or better")
 ![alt text](https://img.shields.io/badge/IBM Bluemix-Ready-blue.svg "IBM Bluemix Ready")
+![alt text](https://img.shields.io/badge/Python-3.5.2_or_better-green.svg "Python 3.5.2 or better")
 
 __92% of the top 200 most downloaded PyPI packages (or their forks) support Python 3.__
 
