@@ -5,7 +5,7 @@
 
 The code in this repo should be running on Bluemix at: http://python3wos.mybluemix.net (add /200 thru /5000 to the URL).
 
-__92% of the top [200](http://python3wos.mybluemix.net/200) most downloaded [PyPI](http://pypi.python.org) packages (or their forks) support Python 3.__
+__90% of the top [300](http://python3wos.mybluemix.net/300) most downloaded [PyPI](http://pypi.python.org) packages (or their forks) support Python 3.__
 
 __Half of the top [3,748](http://python3wos.mybluemix.net/3748) most downloaded PyPI packages (or their forks) support Python 3.__
 
