@@ -7,13 +7,13 @@ The code in this repo should be running on Bluemix at: http://python3wos.mybluem
 
 __92% of the top [200](http://python3wos.mybluemix.net/200) most downloaded [PyPI](http://pypi.python.org) packages (or their forks) support Python 3.__
 
-__Half of the top [3,748](http://python3wos.mybluemix.net/3748) most downloaded PyPI pacakges (or their forks) support Python 3.__
+__Half of the top [3,748](http://python3wos.mybluemix.net/3748) most downloaded PyPI packages (or their forks) support Python 3.__
 
 __Which of the top [5,000](http://python3wos.mybluemix.net/5000) most downloaded PyPI packages are Python 3 compatible?__
 
-This is Python 3.5+ version of https://github.com/ubershmekel/python3wos which adds `asyncio` in order to determine Python 3 support data by reading each package's `Programming Language :: Python :: [...]` [trove classifiers](https://pypi.python.org/pypi?%3Aaction=list_classifiers) from PyPI.  The use of asyncio substantially lowers the time required to gather data on 5,000 PyPI packages to about 25 seconds on [Bluemix](http://www.ibm.com/cloud-computing/bluemix/).
+This is Python 3.5 or later version of https://github.com/ubershmekel/python3wos which adds `asyncio` in order to determine Python 3 support data by reading each package's `Programming Language :: Python :: [...]` [trove classifiers](https://pypi.python.org/pypi?%3Aaction=list_classifiers) from PyPI.  The use of asyncio substantially lowers the time required to gather data on 5,000 PyPI packages to about 20 seconds on [Bluemix](http://www.ibm.com/cloud-computing/bluemix/).  The asynchronous web server is powered by the `aiohttp` module.
 
-[Top 200](http://python3wos.mybluemix.net/) is the default webpage but dynamic webpages will be generated for any route between http://python3wos.mybluemix.net/index_0200.html and http://python3wos.mybluemix.net/index_5000.html so you can explore how Python 3 compatibility drops on as the list grows:
+[Top 200](http://python3wos.mybluemix.net/) is the default web page but dynamic web pages will be generated for any route between http://python3wos.mybluemix.net/index_0200.html and http://python3wos.mybluemix.net/index_5000.html so you can explore how Python 3 compatibility drops on as the list grows:
 * [Top 200](http://python3wos.mybluemix.net/index_0200.html), 
 [Top 400](http://python3wos.mybluemix.net/index_0400.html), 
 [Top 600](http://python3wos.mybluemix.net/index_0600.html), 
