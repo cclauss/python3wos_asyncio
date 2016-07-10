@@ -13,7 +13,7 @@ __28% of ALL PyPI packages (or their forks) support Python 3. Last updated: 2016
 
 __Which of the top [5,000](http://python3wos.mybluemix.net/5000) most downloaded PyPI packages are Python 3 compatible?__
 
-This is Python 3.5 or later version of https://github.com/ubershmekel/python3wos which adds `asyncio` in order to determine Python 3 support data by reading each package's `Programming Language :: Python :: [...]` [trove classifiers](https://pypi.python.org/pypi?%3Aaction=list_classifiers) from PyPI.  The use of asyncio substantially lowers the time required to gather data on 5,000 PyPI packages to about 20 seconds on [Bluemix](http://www.ibm.com/cloud-computing/bluemix/).  The asynchronous web server is powered by the `aiohttp` module.
+This is Python 3.5 or later version of https://github.com/ubershmekel/python3wos which adds `asyncio` in order to determine Python 3 support data by reading each package's `Programming Language :: Python :: [...]` [trove classifiers](https://pypi.python.org/pypi?%3Aaction=list_classifiers) from PyPI.  The use of asyncio substantially lowers the time required to gather data on 5,000 PyPI packages to about 20 seconds on [Bluemix](http://www.ibm.com/cloud-computing/bluemix/).  ALL PyPI packages take about 2 minutes to gather and process.  The asynchronous web server behind python3wos is powered by the `aiohttp` module.
 
 [Top 200](http://python3wos.mybluemix.net/) is the default web page but dynamic web pages will be generated for any route between http://python3wos.mybluemix.net/index_0200.html and http://python3wos.mybluemix.net/index_5000.html so you can explore how Python 3 compatibility drops on as the list grows:
 * [Top 200](http://python3wos.mybluemix.net/index_0200.html), 
