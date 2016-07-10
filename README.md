@@ -9,7 +9,7 @@ __90% of the top [300](http://python3wos.mybluemix.net/300) most downloaded [PyP
 
 __Half of the top [3,748](http://python3wos.mybluemix.net/3748) most downloaded PyPI packages (or their forks) support Python 3.__
 
-__Status: 21,038/75,085 or 28.02% of these packages (or their forks) support Python 3. Last updated: 2016-07-10 09:09 UTC __
+__Status: 21,038/75,085 or 28.02% of these packages (or their forks) support Python 3. Last updated: 2016-07-10 09:09 UTC__
 
 __Which of the top [5,000](http://python3wos.mybluemix.net/5000) most downloaded PyPI packages are Python 3 compatible?__
 
