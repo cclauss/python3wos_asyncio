@@ -9,6 +9,8 @@ __90% of the top [300](http://python3wos.mybluemix.net/300) most downloaded [PyP
 
 __Half of the top [3,748](http://python3wos.mybluemix.net/3748) most downloaded PyPI packages (or their forks) support Python 3.__
 
+__Status: 21,038/75,085 or 28.02% of these packages (or their forks) support Python 3. Last updated: 2016-07-10 09:09 UTC __
+
 __Which of the top [5,000](http://python3wos.mybluemix.net/5000) most downloaded PyPI packages are Python 3 compatible?__
 
 This is Python 3.5 or later version of https://github.com/ubershmekel/python3wos which adds `asyncio` in order to determine Python 3 support data by reading each package's `Programming Language :: Python :: [...]` [trove classifiers](https://pypi.python.org/pypi?%3Aaction=list_classifiers) from PyPI.  The use of asyncio substantially lowers the time required to gather data on 5,000 PyPI packages to about 20 seconds on [Bluemix](http://www.ibm.com/cloud-computing/bluemix/).  The asynchronous web server is powered by the `aiohttp` module.
