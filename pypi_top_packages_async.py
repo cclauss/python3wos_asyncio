@@ -11,8 +11,6 @@ from xmlrpc.client import ServerProxy
 from pypi_create_index_html import main as create_index
 from pypi_create_index_html import enhance_packages
 
-from pypi_io_utils import write_packages
-
 MAX_PKGS = 5000  # or try 1000
 PYPI_URL = 'https://pypi.python.org/pypi'
 PYPI_FMT = PYPI_URL + '/{}/json'
@@ -69,8 +67,9 @@ async def get_packages_info(max_pkgs=MAX_PKGS, start_time=None):
                 html = '\n'.join(line.rstrip() for line in html if line.strip())
                 with open('index.html', 'w') as out_file:
                     out_file.write(html)
-                fmt = 'index.html written with {} packages after {} seconds.'
-                print(len(packages), time.time() - start_time)
+                print('index.html written with {:,} packages after {:.2f} '
+                      'seconds.'.format(len(packages),
+                                        time.time() - start_time))
     return enhance_packages(packages), datetime.datetime.utcnow()
 
 
@@ -82,6 +81,7 @@ def get_from_pypi(loop, max_pkgs=MAX_PKGS, start_time=None):
 
 
 if __name__ == '__main__':
+    from pypi_io_utils import write_packages
     start = time.time()
     packages = get_from_pypi(asyncio.get_event_loop(), MAX_PKGS, start)
     print(time.time() - start, 'seconds')  # 5000 packages in 25 seconds on Bluemix
