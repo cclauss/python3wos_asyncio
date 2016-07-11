@@ -69,6 +69,8 @@ async def get_packages_info(max_pkgs=MAX_PKGS, start_time=None):
                 html = '\n'.join(line.rstrip() for line in html if line.strip())
                 with open('index.html', 'w') as out_file:
                     out_file.write(html)
+                fmt = 'index.html written with {} packages after {} seconds.'
+                print(len(packages), time.time() - start_time)
     return enhance_packages(packages), datetime.datetime.utcnow()
 
 

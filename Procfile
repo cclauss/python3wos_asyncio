@@ -1,1 +1,1 @@
-web: python async_server.py 94000
+web: python server.py 10000
