@@ -55,7 +55,7 @@ def create_tasks(session, max_pkgs=MAX_PKGS):
 
 async def get_packages_info(max_pkgs=MAX_PKGS, start_time=None):
     await asyncio.sleep(1)  # ensure the server is highly responsive on bootup
-    fmt = 'Gathering Python 3 support info on the top {} PyPI packages...'
+    fmt = 'Gathering Python 3 support info on the top {:,} PyPI packages...'
     print(fmt.format(max_pkgs))
     start_time = start_time or time.time()
     packages = []
