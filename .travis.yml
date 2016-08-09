@@ -13,10 +13,10 @@ install:
     - pip install flake8
 # preflight
 before_script:
-  flake8 . --count --statistics  # --exit-zero
+    flake8 . --count --max-line-length=127 --statistics  # --exit-zero
 # command to run tests
 # script: flake8 .  # nosetests
 script: ls  # nosetests
 notifications:
-  on_success: change
-  on_failure: always
+    on_success: change
+    on_failure: always
