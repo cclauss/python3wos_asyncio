@@ -1,6 +1,6 @@
 applications:
 - path: .
-  memory: 128M  # To do all PyPI packages, step up to 512M
+  memory: 512M  # To do all PyPI packages, step up to 512M - 128M
   instances: 1
   domain: mybluemix.net
   name: python3wos
