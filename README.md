@@ -7,7 +7,7 @@ The code in this repo should be running on Bluemix at: http://python3wos.mybluem
 
 __90% of the top [300](http://python3wos.mybluemix.net/300) most downloaded [PyPI](http://pypi.python.org) packages (or their forks) support Python 3.__
 
-__Half of the top [3,748](http://python3wos.mybluemix.net/3748) most downloaded PyPI packages (or their forks) support Python 3.__
+__Half of the top [3,888](http://python3wos.mybluemix.net/3748) most downloaded PyPI packages (or their forks) support Python 3.__
 
 __28% of ALL PyPI packages (or their forks) support Python 3. Last updated: 2016-07-10 09:09 UTC__
 
@@ -33,9 +33,9 @@ This is Python 3.5 or later version of https://github.com/ubershmekel/python3wos
 [Top 3000](http://python3wos.mybluemix.net/index_3000.html), 
 [Top 3200](http://python3wos.mybluemix.net/index_3200.html), 
 [Top 3400](http://python3wos.mybluemix.net/index_3400.html), 
-[Top 3600](http://python3wos.mybluemix.net/index_3600.html)
-* < 50% Python 3 compatible ;-(  [Top 3800](http://python3wos.mybluemix.net/index_3800.html), 
-[Top 4000](http://python3wos.mybluemix.net/index_4000.html), 
+[Top 3600](http://python3wos.mybluemix.net/index_3600.html),
+[Top 3800](http://python3wos.mybluemix.net/index_3800.html)
+* < 50% Python 3 compatible ;-(  [Top 4000](http://python3wos.mybluemix.net/index_4000.html), 
 [Top 4200](http://python3wos.mybluemix.net/index_4200.html), 
 [Top 4400](http://python3wos.mybluemix.net/index_4400.html), 
 [Top 4600](http://python3wos.mybluemix.net/index_4600.html), 
