@@ -1,0 +1,41 @@
+    184/200 or 92.00% of these packages (or their forks) support Python 3
+    272/300 or 90.67% of these packages (or their forks) support Python 3
+    353/400 or 88.25% of these packages (or their forks) support Python 3
+    432/500 or 86.40% of these packages (or their forks) support Python 3
+    494/600 or 82.33% of these packages (or their forks) support Python 3
+    547/700 or 78.14% of these packages (or their forks) support Python 3
+    620/800 or 77.50% of these packages (or their forks) support Python 3
+    675/900 or 75.00% of these packages (or their forks) support Python 3
+   732/1000 or 73.20% of these packages (or their forks) support Python 3
+   973/1500 or 64.87% of these packages (or their forks) support Python 3
+  1205/2000 or 60.25% of these packages (or their forks) support Python 3
+  1408/2500 or 56.32% of these packages (or their forks) support Python 3
+  1608/3000 or 53.60% of these packages (or their forks) support Python 3
+  1789/3500 or 51.11% of these packages (or their forks) support Python 3
+  1977/4000 or 49.43% of these packages (or their forks) support Python 3
+  2163/4500 or 48.07% of these packages (or their forks) support Python 3
+  2357/5000 or 47.14% of these packages (or their forks) support Python 3
+  2508/5500 or 45.60% of these packages (or their forks) support Python 3
+  2679/6000 or 44.65% of these packages (or their forks) support Python 3
+  2841/6500 or 43.71% of these packages (or their forks) support Python 3
+  3000/7000 or 42.86% of these packages (or their forks) support Python 3
+  3168/7500 or 42.24% of these packages (or their forks) support Python 3
+  3299/8000 or 41.24% of these packages (or their forks) support Python 3
+  3419/8500 or 40.22% of these packages (or their forks) support Python 3
+  3549/9000 or 39.43% of these packages (or their forks) support Python 3
+  3695/9500 or 38.89% of these packages (or their forks) support Python 3
+ 3833/10000 or 38.33% of these packages (or their forks) support Python 3
+ 5133/15000 or 34.22% of these packages (or their forks) support Python 3
+ 6323/20000 or 31.61% of these packages (or their forks) support Python 3
+ 7513/25000 or 30.05% of these packages (or their forks) support Python 3
+ 8648/30000 or 28.83% of these packages (or their forks) support Python 3
+ 9742/35000 or 27.83% of these packages (or their forks) support Python 3
+10882/40000 or 27.21% of these packages (or their forks) support Python 3
+11955/45000 or 26.57% of these packages (or their forks) support Python 3
+12977/50000 or 25.95% of these packages (or their forks) support Python 3
+14153/55000 or 25.73% of these packages (or their forks) support Python 3
+15596/60000 or 25.99% of these packages (or their forks) support Python 3
+17459/65000 or 26.86% of these packages (or their forks) support Python 3
+19398/70000 or 27.71% of these packages (or their forks) support Python 3
+21271/75000 or 28.36% of these packages (or their forks) support Python 3
+22098/77391 or 28.55% of these packages (or their forks) support Python 3
