@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-import datetime, requests
+import datetime
+import requests
 
 filename = 'status/Status_{:%Y_%m_%d}.txt'.format(datetime.date.today())
 url_fmt = 'http://python3wos.mybluemix.net/{}'
@@ -20,6 +21,7 @@ def get_numbers(max=80000):
 with open(filename, 'w') as out_file:
     for i in get_numbers():
         html = requests.get(url_fmt.format(i)).text
-        text = '{:>73}'.format(html.split('Status: ')[-1].split('. ')[0])
+        text = '{:>73}'.format(html.split('Status: ')[-1].split(
+            '. ')[0])
         out_file.write(text + '\n') 
         print(text)
