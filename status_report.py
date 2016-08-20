@@ -21,7 +21,6 @@ def get_numbers(max=80000):
 with open(filename, 'w') as out_file:
     for i in get_numbers():
         html = requests.get(url_fmt.format(i)).text
-        text = '{:>73}'.format(html.split('Status: ')[-1].split(
-            '. ')[0])
-        out_file.write(text + '\n') 
+        text = '{:>73}'.format(html.split('Status: ')[-1].split('. ')[0])
+        out_file.write(text + '\n')
         print(text)
