@@ -12,7 +12,7 @@ from pypi_create_index_html import main as create_index
 from pypi_create_index_html import enhance_packages
 
 MAX_PKGS = 5000  # or try 1000
-PYPI_URL = 'https://warehouse.python.org/pypi'
+PYPI_URL = 'https://pypi.python.org/pypi'
 PYPI_FMT = PYPI_URL + '/{}/json'
 
 fields = 'pkg_name downloads py2only py3 release url'
