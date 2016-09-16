@@ -14,7 +14,7 @@ start = time.time()
 try:
     os.chdir('static_parent_dir')
 except FileNotFoundError:
-    pass #
+    pass
 
 with open('equivalent_modules.json') as in_file:
     EQUIVALENTS = json.load(in_file)
