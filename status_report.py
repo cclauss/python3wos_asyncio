@@ -18,6 +18,7 @@ def get_numbers(max=80000):
             incr *= 10
         i += incr
 
+
 with open(filename, 'w') as out_file:
     for i in get_numbers():
         html = requests.get(url_fmt.format(i)).text
