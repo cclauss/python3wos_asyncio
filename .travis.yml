@@ -1,6 +1,6 @@
 language: python
 python:
-    - "2.7.13"
+#   - "2.7.13"
     - "3.6.0"
     - "nightly"  # Python 3.7.0a0 and pip 7.1.2  # currently points to 3.6-dev
 # command to install dependencies
