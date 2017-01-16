@@ -37,6 +37,7 @@ def done_callback(fut, app=None):  # Called when PyPI data capture is complete
     fmt = ' Gathered Python 3 support info on {:,} PyPI packages in {:.2f} seconds.'
     print(fmt.format(len(app['packages']), elapsed))
 
+
 fut = asyncio.run_coroutine_threadsafe(get_packages_info(max_pkgs, START_TIME),
                                        app.loop)
 fut.add_done_callback(functools.partial(done_callback, app=app))
