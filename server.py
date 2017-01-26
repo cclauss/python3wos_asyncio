@@ -44,11 +44,11 @@ fut.add_done_callback(functools.partial(done_callback, app=app))
 
 
 async def index_handler(request):
-    try:  # return index.html if it exists
-        with open('index.html') as in_file:
-            return web.Response(text=in_file.read())
-    except FileNotFoundError:
-        return web.Response(text='Processing: Please refresh this page')
+    #try:  # return index.html if it exists
+    #    with open('index.html') as in_file:
+    #        return web.Response(text=in_file.read())
+    #except FileNotFoundError:
+    return web.Response(text='Processing: Please refresh this page')
 
 
 @aiohttp_jinja2.template('index_db.html')
@@ -65,7 +65,7 @@ async def handler(request):
 
 def run_webserver(app, port=PORT):
     aiohttp_jinja2.setup(app, loader=jinja2.FileSystemLoader(os.curdir))
-    app.router.add_route('GET', '/', index_handler)
+    app.router.add_route('GET', '/', handler)
     app.router.add_route('GET', '/{max_pkgs}', handler)
     app.router.add_static('/static/', path='./static')
     web.run_app(app, port=PORT)
