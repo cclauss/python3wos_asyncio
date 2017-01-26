@@ -2,10 +2,10 @@ language: python
 python:
 #   - "2.7.13"
     - "3.6.0"
-    - "nightly"  # Python 3.7.0a0 and pip 7.1.2  # currently points to 3.6-dev
+    - "nightly"  # Python 3.7.0a0 and pip 7.1.2  # currently points to 3.7-dev
 # command to install dependencies
 install:
-#   - pip install --upgrade pip  # pip 6.0.8 vs. pip 8.1.2
+#   - pip install --upgrade pip
 #   - pip --version  # This does not work
 #   - pip install -r requirements.txt
     - pip install flake8
