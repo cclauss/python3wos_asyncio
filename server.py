@@ -46,7 +46,7 @@ fut.add_done_callback(functools.partial(done_callback, app=app))
 async def index_handler(request):
     try:  # return index.html if it exists
         with open('index.html') as in_file:
-            return web.Response(body=in_file.read().encode())
+            return web.Response(text=in_file.read().encode())
     except FileNotFoundError:
         return web.Response(text='Processing: Please refresh this page')
 
