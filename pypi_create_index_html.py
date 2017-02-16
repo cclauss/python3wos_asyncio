@@ -18,7 +18,7 @@ except FileNotFoundError:
 
 with open('equivalent_modules.json') as in_file:
     EQUIVALENTS = json.load(in_file)
-print(len(EQUIVALENTS))
+print('> {}'.format(len(EQUIVALENTS)))
 
 # fields = 'pkg_name downloads version py2only py3'
 flds = 'pkg_name downloads equivalent_url has_py3_fork py2only py3 release url'
@@ -26,6 +26,7 @@ pkg_info = collections.namedtuple('pkg_info', flds)
 
 
 def enhance_packages(packages):
+    print('< {}'.format(len(EQUIVALENTS)))
     def enhance_package(package):
         downloads = '{:,}'.format(package.downloads)  # add commas
         equivalent_url = EQUIVALENTS.get(package.pkg_name, '')
