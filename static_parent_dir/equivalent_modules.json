@@ -11,6 +11,7 @@
     "ordereddict": "https://docs.python.org/3/library/collections.html#collections.OrderedDict",
     "python-ldap": "https://pypi.python.org/pypi/pyldap",
     "python-openid": "https://github.com/necaris/python3-openid",
+    "pyzmq-static": "https://pypi.python.org/pypi/pyzmq",
     "simplejson": "https://docs.python.org/3/library/json.html",
     "ssh": "https://pypi.python.org/pypi/paramiko",
     "ssl": "https://docs.python.org/3/library/ssl.html",
