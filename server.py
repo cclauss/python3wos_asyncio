@@ -10,6 +10,8 @@ import os
 import sys
 import time
 import webbrowser
+
+import pypi_create_index_html  # noqa
 from pypi_top_packages_async import get_packages_info
 from pypi_create_index_html import build_template_values
 
