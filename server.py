@@ -53,9 +53,10 @@ async def index_handler(request):
 
 @aiohttp_jinja2.template('index_db.html')
 async def handler(request):
-    packages = request.app.get('packages', None)
+    packages = request.app.get('packages')
     if not packages:  # if data capture still ongoing, default to index.html
         return await index_handler(request)
+    print('len(packages): {}'.format(len(packages)))
     max_pkgs = request.match_info.get('max_pkgs', '').split('.')[0]
     max_pkgs = ''.join(c for c in max_pkgs if c.isdigit())
     max_pkgs = max(int(max_pkgs) if max_pkgs else 0, 200)
