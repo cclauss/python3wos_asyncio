@@ -18,6 +18,7 @@ except FileNotFoundError:
 
 with open('equivalent_modules.json') as in_file:
     EQUIVALENTS = json.load(in_file)
+print(len(EQUIVALENTS))
 
 # fields = 'pkg_name downloads version py2only py3'
 flds = 'pkg_name downloads equivalent_url has_py3_fork py2only py3 release url'
