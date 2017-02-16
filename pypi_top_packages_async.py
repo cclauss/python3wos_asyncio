@@ -8,7 +8,7 @@ import datetime
 import time
 from xmlrpc.client import ServerProxy
 
-import pypi_create_index_html
+import pypi_create_index_html  # noqa
 from pypi_create_index_html import main as create_index
 from pypi_create_index_html import enhance_packages
 
