@@ -27,6 +27,7 @@ pkg_info = collections.namedtuple('pkg_info', flds)
 
 def enhance_packages(packages):
     print('< {}'.format(len(EQUIVALENTS)))
+
     def enhance_package(package):
         downloads = '{:,}'.format(package.downloads)  # add commas
         equivalent_url = EQUIVALENTS.get(package.pkg_name, '')
