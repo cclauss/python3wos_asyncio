@@ -1,6 +1,7 @@
 {
     "argparse": "https://docs.python.org/3/library/argparse.html",
     "BeautifulSoup": "https://pypi.python.org/pypi/beautifulsoup4",
+    "cryptography-vectors": "https://pypi.python.org/pypi/cryptography",
     "Fabric": "https://pypi.python.org/pypi/Fabric3",
     "functools32": "https://docs.python.org/3/library/functools.html",
     "futures": "http://docs.python.org/3/library/concurrent.futures.html",
