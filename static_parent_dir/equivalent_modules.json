@@ -6,7 +6,7 @@
     "Fabric": "https://pypi.python.org/pypi/Fabric3",
     "functools32": "https://docs.python.org/3/library/functools.html",
     "futures": "http://docs.python.org/3/library/concurrent.futures.html",
-    "httplib2":, "https://github.com/httplib2/httplib2",
+    "httplib2": "https://github.com/httplib2/httplib2",
     "ipaddr": "https://docs.python.org/3/library/ipaddress.html",
     "ipaddress": "https://docs.python.org/3/library/ipaddress.html",
     "multiprocessing": "https://docs.python.org/3/library/multiprocessing.html",
