@@ -7,6 +7,8 @@
     "functools32": "https://docs.python.org/3/library/functools.html",
     "futures": "http://docs.python.org/3/library/concurrent.futures.html",
     "ghostscript": "https://pypi.python.org/pypi/python3-ghostscript/0.5.0",
+    "hachoir-core": "https://pypi.python.org/pypi/hachoir3",
+    "hachoir-metadata": "https://pypi.python.org/pypi/hachoir3",
     "httplib2": "https://github.com/httplib2/httplib2",
     "ipaddr": "https://docs.python.org/3/library/ipaddress.html",
     "ipaddress": "https://docs.python.org/3/library/ipaddress.html",
