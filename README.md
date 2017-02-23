@@ -6,7 +6,10 @@
 The code in this repo should be running on Bluemix at: http://python3wos.mybluemix.net (add /200 thru /90000 to the URL).
 
 Or you can:
-   https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/cclauss/python3wos_asyncio)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/cclauss/python3wos_asyncio)
+
 
 __90% of the top [423](https://python3wos.mybluemix.net/423) most downloaded [PyPI](http://pypi.python.org) packages (or their forks) support Python 3.__
 
