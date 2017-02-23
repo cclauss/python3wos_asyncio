@@ -3,9 +3,7 @@
 ![alt text](https://img.shields.io/badge/Python-3.5_or_later-green.svg "Python 3.5 or later")
 ![alt text](https://img.shields.io/travis/cclauss/python3wos_asyncio.svg "Travis build status")
 
-The code in this repo should be running on Bluemix at: http://python3wos.mybluemix.net (add /200 thru /90000 to the URL).
-
-Or you can:
+The code in this repo should be running on Bluemix at: http://python3wos.mybluemix.net (add /200 thru /90000 to the URL) or if you want your own instance, you can:
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/cclauss/python3wos_asyncio)
 
 
