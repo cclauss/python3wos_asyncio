@@ -6,8 +6,6 @@
 The code in this repo should be running on Bluemix at: http://python3wos.mybluemix.net (add /200 thru /90000 to the URL).
 
 Or you can:
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=/)
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/cclauss/python3wos_asyncio)
 
 
