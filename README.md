@@ -9,9 +9,9 @@ The code in this repo should be running on Bluemix at: http://python3wos.mybluem
 
 __90% of the top [423](https://python3wos.mybluemix.net/423) most downloaded [PyPI](http://pypi.python.org) packages (or their forks) support Python 3.__
 
-__Half of the top [5,050](https://python3wos.mybluemix.net/5050) most downloaded PyPI packages (or their forks) support Python 3.__
+__Half of the top [5,136](https://python3wos.mybluemix.net/5136) most downloaded PyPI packages (or their forks) support Python 3.__
 
-__31.18% of ALL PyPI packages (or their forks) support Python 3. Last updated: 2017-02-18__
+__31.36% of ALL PyPI packages (or their forks) support Python 3. Last updated: 2017-03-03__
 
 __Which of the top [5,000](http://python3wos.mybluemix.net/5000) most downloaded PyPI packages are Python 3 compatible?__
 
