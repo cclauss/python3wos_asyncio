@@ -29,5 +29,6 @@
     "suds": "https://pypi.python.org/pypi/suds-jurko",
     "unittest2": "https://docs.python.org/3/library/unittest.html",
     "uuid": "https://docs.python.org/3/library/uuid.html",
+    "uWSGI": "http://uwsgi-docs.readthedocs.io/en/latest/Python.html?highlight=python%203#python-3",
     "wsgiref": "https://docs.python.org/3/library/wsgiref.html"
 }
