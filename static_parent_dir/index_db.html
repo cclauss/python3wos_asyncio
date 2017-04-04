@@ -51,9 +51,6 @@
             {% if package.equivalent_url %}
                 <tr class="py3True" id="{{package.pkg_name}}">
                     <td>
-                      {{ loop.index }}
-                    </td>
-                    <td>
                         <a href="{{package.url}}" timestamp="{{package.timestamp}}">{{package.pkg_name}}</a>
                         {% if package.has_py3_fork %}
                             <img src="static/redtri.png" alt="Has a Python 3 fork" title="This package isn't classified as being Python 3 compatible on PyPI, but there is a Python 3 compatible alternative..."/>
@@ -64,9 +61,6 @@
                     </td>
             {% else %}
                 <tr class="py3{{package.py3}}" id="{{package.pkg_name}}">
-                    <td>
-                      {{ loop.index }}
-                    </td>
                     <td>
                         <a href="{{package.url}}" timestamp="{{package.timestamp}}">{{package.pkg_name}}</a>
                         {% if package.py2only %}
