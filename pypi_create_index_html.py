@@ -35,7 +35,7 @@ def enhance_packages(packages):
         downloads = '{:,}'.format(package.downloads)  # add commas
         equivalent_url = EQUIVALENTS.get(package.pkg_name, '')
         has_py3_fork = equivalent_url.startswith('https://pypi.')
-        if package.py3 or has_py3_fork:
+        if package.py3 or equivalent_url:
             py3_total += 1
         py3_percentage = '{:.2%}'.format(py3_total / (i + 1))
         return pkg_info(package.pkg_name, downloads, equivalent_url,
