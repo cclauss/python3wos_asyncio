@@ -41,7 +41,7 @@ def done_callback(fut, app=None):  # Called when PyPI data capture is complete
 
 
 fut = asyncio.run_coroutine_threadsafe(get_packages_info(max_pkgs, START_TIME),
-                                       app.loop)
+                                       asyncio.get_event_loop())
 fut.add_done_callback(functools.partial(done_callback, app=app))
 
 
