@@ -21,21 +21,27 @@ with open('equivalent_modules.json') as in_file:
 print('> {}'.format(len(EQUIVALENTS)))
 
 # fields = 'pkg_name downloads version py2only py3'
-flds = 'pkg_name downloads equivalent_url has_py3_fork py2only py3 release url'
+flds = ('pkg_name downloads equivalent_url has_py3_fork py2only py3 '
+        'py3_percentage release url')
 pkg_info = collections.namedtuple('pkg_info', flds)
 
 
 def enhance_packages(packages):
     print('< {}'.format(len(EQUIVALENTS)))
+    py3_total = 0
 
-    def enhance_package(package):
+    def enhance_package(i, package):
+        nonlocal py3_total
         downloads = '{:,}'.format(package.downloads)  # add commas
         equivalent_url = EQUIVALENTS.get(package.pkg_name, '')
         has_py3_fork = equivalent_url.startswith('https://pypi.')
+        if package.py3 or has_py3_fork:
+            py3_total += 1
+        py3_percentage = '{:.2%}'.format(py3_total / (i + 1))
         return pkg_info(package.pkg_name, downloads, equivalent_url,
                         has_py3_fork, package.py2only, package.py3,
-                        package.release, package.url)
-    return [enhance_package(package) for package in packages]
+                        py3_percentage, package.release, package.url)
+    return [enhance_package(i, package) for i, package in enumerate(packages)]
 
     # url = client.release_data(pkg_name, release)['package_url']
 
