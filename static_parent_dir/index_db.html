@@ -51,7 +51,7 @@
             {% if package.equivalent_url %}
                 <tr class="py3True" id="{{package.pkg_name}}">
                     <td>
-                      {{ loop.index + 1 }}
+                      {{ loop.index }}
                     </td>
                     <td>
                         <a href="{{package.url}}" timestamp="{{package.timestamp}}">{{package.pkg_name}}</a>
@@ -65,7 +65,7 @@
             {% else %}
                 <tr class="py3{{package.py3}}" id="{{package.pkg_name}}">
                     <td>
-                      {{ loop.index + 1 }}
+                      {{ loop.index }}
                     </td>
                     <td>
                         <a href="{{package.url}}" timestamp="{{package.timestamp}}">{{package.pkg_name}}</a>
