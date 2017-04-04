@@ -46,16 +46,11 @@
         <p>
             Status: {{count}} of these packages (or their forks) support Python 3.  Last updated: {{min_time}}
         </p>
-        <table><tr><th>Rank</th><th>Python 3 Support</th><th>Package</th><th>Downloads</th></tr>
+        <table><tr><th>Rank</th><th>Package</th><th>Downloads</th><th>Python 3 Support</th></tr>
         {% for package in packages %}
             {% if package.equivalent_url %}
                 <tr class="py3True" id="{{package.pkg_name}}">
-                    <td>
-                        {{loop.index}}
-                    </td>
-                    <td>
-                        {{package.py3_percentage}}
-                    </td>
+                    <td>{{loop.index}}</td>
                     <td>
                         <a href="{{package.url}}" timestamp="{{package.timestamp}}">{{package.pkg_name}}</a>
                         {% if package.has_py3_fork %}
@@ -67,12 +62,7 @@
                     </td>
             {% else %}
                 <tr class="py3{{package.py3}}" id="{{package.pkg_name}}">
-                    <td>
-                        {{loop.index}}
-                    </td>
-                    <td>
-                        {{package.py3_percentage}}
-                    </td>
+                    <td>{{loop.index}}</td>
                     <td>
                         <a href="{{package.url}}" timestamp="{{package.timestamp}}">{{package.pkg_name}}</a>
                         {% if package.py2only %}
@@ -81,6 +71,7 @@
                     </td>
             {% endif %}
                     <td>{{package.downloads}}</td>
+                    <td>{{package.py3_percentage}}</td>
             </tr>
         {% endfor %}
         </table>
