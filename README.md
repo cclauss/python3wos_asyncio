@@ -45,4 +45,4 @@ This is Python 3.5 or later version of https://github.com/ubershmekel/python3wos
 [Top 5000](http://python3wos.mybluemix.net/5000).
 * < 50% Python 3 compatible ;-(  [Top 5500](http://python3wos.mybluemix.net/5500).
 
-![](static_parent_dir/Python 3 is 3000 days old.png)
+![](static_parent_dir/Python_3_is_3000_days_old.png)
