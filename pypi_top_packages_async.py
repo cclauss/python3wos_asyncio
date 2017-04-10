@@ -19,7 +19,7 @@ PYPI_FMT = PYPI_URL + '/{}/json'
 fields = 'pkg_name downloads py2only py3 release url'
 pkg_info = collections.namedtuple('pkg_info', fields)
 FMT = '{pkg_name:30}{release:13}{py3}  {py2only}'
-py2_only_classifier = 'Programming Language :: Python :: 2 only'
+py2_only_classifier = 'Programming Language :: Python :: 2 :: Only'
 py3_classifier = 'Programming Language :: Python :: 3'
 
 
