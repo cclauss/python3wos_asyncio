@@ -1,5 +1,6 @@
 {
     "argparse": "https://docs.python.org/3/library/argparse.html",
+    "backport_ipaddress": "https://docs.python.org/3/library/ipaddress.html",
     "BeautifulSoup": "https://pypi.python.org/pypi/beautifulsoup4",
     "cogen": "https://pypi.python.org/pypi/curio",
     "cryptography-vectors": "https://pypi.python.org/pypi/cryptography",
