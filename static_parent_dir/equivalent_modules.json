@@ -3,6 +3,7 @@
     "BeautifulSoup": "https://pypi.python.org/pypi/beautifulsoup4",
     "cogen": "https://pypi.python.org/pypi/curio",
     "cryptography-vectors": "https://pypi.python.org/pypi/cryptography",
+    "enum": "https://docs.python.org/3/library/enum.html",
     "Fabric": "https://pypi.python.org/pypi/Fabric3",
     "functools32": "https://docs.python.org/3/library/functools.html",
     "futures": "http://docs.python.org/3/library/concurrent.futures.html",
