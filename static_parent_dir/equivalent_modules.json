@@ -6,6 +6,7 @@
     "cryptography-vectors": "https://pypi.python.org/pypi/cryptography",
     "enum": "https://docs.python.org/3/library/enum.html",
     "Fabric": "https://pypi.python.org/pypi/Fabric3",
+    "fake-factory": "https://github.com/joke2k/faker",
     "functools32": "https://docs.python.org/3/library/functools.html",
     "futures": "http://docs.python.org/3/library/concurrent.futures.html",
     "ghostscript": "https://pypi.python.org/pypi/python3-ghostscript/0.5.0",
