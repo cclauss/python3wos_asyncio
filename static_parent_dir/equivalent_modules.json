@@ -4,6 +4,7 @@
     "backport_importlib": "https://docs.python.org/3/library/importlib.html",
     "backport_ipaddress": "https://docs.python.org/3/library/ipaddress.html",
     "backports.inspect": "https://docs.python.org/3/library/inspect.html",
+    "bcdoc": "https://github.com/boto/bcdoc",
     "BeautifulSoup": "https://pypi.python.org/pypi/beautifulsoup4",
     "cogen": "https://pypi.python.org/pypi/curio",
     "cryptography-vectors": "https://pypi.python.org/pypi/cryptography",
