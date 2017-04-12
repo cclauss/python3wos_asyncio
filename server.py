@@ -16,7 +16,7 @@ from pypi_top_packages_async import get_packages_info
 from pypi_create_index_html import build_template_values
 
 START_TIME = time.time()
-MAX_PKGS = 200  # User can override this by entering a value on the commandline
+MAX_PKGS = 500  # User can override this by entering a value on the commandline
 PORT = int(os.getenv('PORT', 8000))  # Cloud will provide a web server PORT id
 
 try:  # Immediately change current directory to avoid exposure of control files
@@ -61,7 +61,7 @@ async def handler(request):
     print('len(packages): {}'.format(len(packages)))
     max_pkgs = request.match_info.get('max_pkgs', '').split('.')[0]
     max_pkgs = ''.join(c for c in max_pkgs if c.isdigit())
-    max_pkgs = max(int(max_pkgs) if max_pkgs else 0, 200)
+    max_pkgs = max(int(max_pkgs) if max_pkgs else 0, 500)
     return build_template_values(packages[:max_pkgs],
                                  request.app.get('data_datetime'))
 
