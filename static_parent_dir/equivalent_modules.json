@@ -27,6 +27,7 @@
     "ipaddr": "https://docs.python.org/3/library/ipaddress.html",
     "ipaddress": "https://docs.python.org/3/library/ipaddress.html",
     "jsonlib": "https://pypi.python.org/pypi/jsonlib-python3",
+    "M2Crypto": "https://pypi.python.org/pypi/cryptography",
     "mox": "https://pypi.python.org/pypi/mox3",
     "multiprocessing": "https://docs.python.org/3/library/multiprocessing.html",
     "MySQL-python": "https://pypi.python.org/pypi/mysqlclient",
