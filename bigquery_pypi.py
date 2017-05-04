@@ -7,7 +7,7 @@ from google.cloud import bigquery
 
 
 def sync_query(query, max_packages=5000):
-    client = bigquery.Client("annular-mercury-117813")
+    client = bigquery.Client("<Your Project ID>")
     query_results = client.run_sync_query(query.format(max_packages))
     query_results.run()
     rows, total_rows, page_token = query_results.fetch_data()
