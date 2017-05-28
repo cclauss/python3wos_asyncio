@@ -1,88 +1,95 @@
-'''
-def get_pkg_info(pkg_name, downloads=0):
-    # multiple asyncio jobs can not share a client
-    client = ServerProxy(PYPI_URL)
-    try:
-        release = client.package_releases(pkg_name)[0]
-    except IndexError:  # marionette-transport, ll-orasql, and similar
-        print(pkg_name, 'has no releases in PyPI!!')
-        return pkg_info(pkg_name, downloads, False, False, 'PyPI error!!', '')
-    troves = '\n'.join(client.release_data(pkg_name, release)['classifiers'])
-    py2only = py2_only_classifier in troves
-    py3 = py3_classifier in troves
-    url = client.release_data(pkg_name, release)['package_url']
-    return pkg_info(pkg_name, downloads, py2only, py3, release, url)
+import scene
 
-@asyncio.coroutine
-def async_main(max_pkgs=MAX_PKGS):  # ~ 32 secs for 200 pkgs on my MacBookPro
-    loop = asyncio.get_event_loop()
-    client = ServerProxy(PYPI_URL)
-    futures = [loop.run_in_executor(None, get_pkg_info, pkg_name, downloads)
-               for pkg_name, downloads in client.top_packages(max_pkgs)]
-    return [(yield from fut) for fut in futures]
+ui = scene.ui
+
+# pip_loc is a tuple of lists of tuples.  Use tuples where possible because
+# lists require slightly more RAM.  For each domino die from 0 to 9 there is a
+# list of the coordinates of the dots/pips.
+pip_locs = ([()],
+            [(1,1)],
+            [(0,0), (2,2)],
+            [(0,0), (1,1), (2,2)],
+            [(0,0), (2,0), (0,2), (2,2)],
+            [(0,0), (0,2), (1,1), (2,0), (2,2)],
+            [(0,0), (1,0), (2,0), (0,2), (1,2), (2,2)],
+            [(0,0), (1,0), (2,0), (1,1), (0,2), (1,2), (2,2)],
+            [(0,0), (1,0), (2,0), (0,1), (2,1), (0,2), (1,2), (2,2)],
+            [(0,0), (1,0), (2,0), (0,1), (1,1), (2,1), (0,2), (1,2), (2,2)])
 
 
-async def get_packages_info(max_pkgs=MAX_PKGS):  # ~ 32 secs for 200 pkgs on my MacBookPro
-    loop = asyncio.get_event_loop()
-    client = ServerProxy(PYPI_URL)
-    with aiohttp.ClientSession(loop=loop) as session:
-        futures = [get_pkg_info_II(session, pkg_name, downloads)
-                   for pkg_name, downloads in client.top_packages(max_pkgs)]
-    return await [fut() for fut in futures]
-'''
+def generateDominosYield(inMaxDie = 6):  # Yield = Generator -- is an iterator
+    for x in range(inMaxDie + 1):
+        for y in range(inMaxDie + 1):
+            if not x > y:
+                yield (x, y)
 
-# async def get_packages_names_and_downloads(max_pkgs=MAX_PKGS):
-#     return ServerProxy(PYPI_URL).top_packages(max_pkgs)
+def domino_image(pips=(5, 6), width=600, fg_color='blue', bg_color='grey'):
+    height = int(width / 2)
+    with ui.ImageContext(width, height) as ctx:
+        # domino is rounded rect in background color
+        ui.set_color(bg_color)
+        ui.Path.rounded_rect(0, 0, width, height, height / 10).fill()
+        # pips are circles in foreground color
+        ui.set_color(fg_color)
+        pip_size = height / 3
+        b = int(height / 18)
+        wh = pip_size - 2 * b
+        # draw pips[0]
+        for loc in pip_locs[pips[0]]:
+            if loc:
+                x, y = loc
+                ui.Path.oval(x * pip_size + b, y * pip_size + b, wh, wh).fill()
+        # draw dividing line
+        path = ui.Path()
+        path.line_width = 4
+        path.move_to(height, b)
+        path.line_to(height, height - b)
+        path.close()
+        path.stroke()
+        # draw pips[1]
+        for loc in pip_locs[pips[1]]:
+            if loc:
+                x, y = loc
+                ui.Path.oval(x * pip_size + b + height, y * pip_size + b, wh, wh).fill()
+        return scene.Texture(ctx.get_image())
+        
 
-packages_info = []
-'''
-  results = []
-  tasks = ServerProxy(PYPI_URL).top_packages(max_pkgs)
-  while names_and_downloads:
-      current_block = names_and_downloads[:200]
-      names_and_downloads = names_and_downloads[200:]
-      # results +=
+class MyScene(scene.Scene):
+    def old_setup(self):
+        domino = self.make_domino()
 
-  with aiohttp.ClientSession() as session:
-      # print(await fetch_json(session, 'https://pypi.python.org/pypi/aiohttp/json'))
-      # pkg_name = 'aiohttp'
-      # print(await get_pkg_info_II(session, pkg_name, downloads=0))
-      # client = ServerProxy(PYPI_URL)
-      return await asyncio.gather(*create_tasks(session, max_pkgs))
-#        for pkg_name, downloads in client.top_packages(max_pkgs):
-#            packages_info.append(await get_pkg_info_II(session, pkg_name,
-#                                                       downloads))
-#    return packages_info
+    def setup(self):
+        hud_up(0)
+        bufferSize = 4
+        maxDie = 6
+        # print(1)
+        dieSize = int((self.bounds.w - bufferSize * 6) / 14)
+        print('dieSize', dieSize)
+        top = int((self.bounds.h - bufferSize * 6) / 7)
+        print('top', top)
+        # print(2)
+        
+        w = dieSize * 2
+        h = dieSize
+        #for i in range(7):
+            #for j in range(7):
+                #if not i > j:
+        hud_up(3)
+        for (i, j) in generateDominosYield(maxDie):
+            hud_up(0)
+            theDomino = DominoNode((i, j), dieSize)
+            sys.exit(7)
+            theDomino.frame.x = j * (w + bufferSize)
+            theDomino.frame.y = top + i * (h + bufferSize)
+            #theDomino.rotation = 90
+            
+            #self.add_layer(theDomino)
+            self.add_child(theDomino)
+            print(theDomino)
 
-  loop = asyncio.get_event_loop()
-  with aiohttp.ClientSession(loop=loop) as session:
-      print(loop.run_until_complete(get_packages_info(max_pkgs=MAX_PKGS)))
-  return
+    def make_domino(self):
+        return scene.SpriteNode(domino_image(pips=(5, 6)), parent=self,
+                                position=self.bounds.center())
 
-  '-''
-  loop = asyncio.get_event_loop()
-  with aiohttp.ClientSession(loop=loop) as session:
-      d = [(yield from get_pkg_info_II(session, 'aiohttp', 0)) for mod in 'pip requests aiohttp'.split()]
-      ## d = loop.run_until_complete(get_pkg_info_II(session, 'aiohttp', 0))
-      #    fetch_json(session, 'https://pypi.python.org/pypi/aiohttp/json'))
-  import pprint
-  # pprint.pprint(d)
-  for x in d:
-      pprint.pprint(x)
-  exit()
-  '-''
-
-  start = time.time()
-  loop = asyncio.get_event_loop()
-  packages = loop.run_until_complete(async_main_II(10))  # max_pkgs))
-  print(time.time() - start, 'seconds')  # ~ 32 sec if asyncio else ~ 105 sec
-  filename = 'pypi_top{}_async.json'.format(max_pkgs)
-  if packages:
-      with open(filename, 'w') as out_file:
-          json.dump(packages, out_file)  # , indent=2)
-      print('Info for {} packages written to {}'.format(len(packages),
-                                                        filename))
-  else:
-      print('No data was written!!')
-  return packages
-'''
+if __name__ == '__main__':
+    scene.run(MyScene(), show_fps=False)
