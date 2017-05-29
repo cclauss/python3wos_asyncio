@@ -4,13 +4,16 @@ ui = scene.ui
 # pip_loc is a tuple of lists of tuples.  Use tuples where possible because
 # lists require slightly more RAM.  For each domino die from 0 to 9 there is a
 # list of the coordinates of the dots/pips.
-pip_locs = ([()], [(1, 1)], [(0, 0), (2, 2)], [(0, 0), (1, 1), (2, 2)], [(
-    0, 0), (2, 0), (0, 2), (2, 2)], [(0, 0), (0, 2), (1, 1), (2, 0), (2, 2)],
-            [(0, 0), (1, 0), (2, 0), (0, 2), (1, 2),
-             (2, 2)], [(0, 0), (1, 0), (2, 0), (1, 1), (0, 2), (1, 2), (2, 2)],
-            [(0, 0), (1, 0), (2, 0), (0, 1), (2, 1), (0, 2), (1, 2),
-             (2, 2)], [(0, 0), (1, 0), (2, 0), (0, 1), (1, 1), (2, 1), (0, 2),
-                       (1, 2), (2, 2)])
+pip_locs = ([()],
+            [(1, 1)],
+            [(0, 0), (2, 2)],
+            [(0, 0), (1, 1), (2, 2)],
+            [(0, 0), (2, 0), (0, 2), (2, 2)],
+            [(0, 0), (0, 2), (1, 1), (2, 0), (2, 2)],
+            [(0, 0), (1, 0), (2, 0), (0, 2), (1, 2), (2, 2)],
+            [(0, 0), (1, 0), (2, 0), (1, 1), (0, 2), (1, 2), (2, 2)],
+            [(0, 0), (1, 0), (2, 0), (0, 1), (2, 1), (0, 2), (1, 2), (2, 2)],
+            [(0, 0), (1, 0), (2, 0), (0,1), (1,1), (2,1), (0,2), (1,2), (2,2)])
 
 
 def generateDominosYield(inMaxDie=6):  # Yield = Generator -- is an iterator
@@ -75,6 +78,7 @@ class MyScene(scene.Scene):
     def touch_began(self, touch):
         for domino in self.children:
             if touch.location in domino.frame:
+                domino.rotation += scene.math.pi / 2  # turn by 90 degrees
                 self.dragging_domino = domino
                 return
         self.dragging_domino = None
