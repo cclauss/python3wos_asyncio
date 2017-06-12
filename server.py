@@ -15,7 +15,6 @@ import pypi_create_index_html  # noqa
 from pypi_top_packages_async import get_packages_info
 from pypi_create_index_html import build_template_values
 
-print 'This thing is broken!!!'
 f'Python 3.6 or better is required'  # f-string will be a syntax error pre-3.6
 START_TIME = time.time()
 MAX_PKGS = 500  # User can override this by entering a value on the commandline
