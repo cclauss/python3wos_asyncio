@@ -28,6 +28,7 @@ pkg_info = collections.namedtuple('pkg_info', flds)
 
 def enhance_packages(packages):
     print('< {}'.format(len(EQUIVALENTS)))
+    print('pyrax:', 'pyrax' in EQUIVALENTS)
     py3_total = 0
 
     def enhance_package(i, package):
