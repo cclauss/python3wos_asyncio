@@ -37,7 +37,7 @@
     "py-bcrypt": "https://pypi.python.org/pypi/bcrypt",
     "py2-ipaddress": "https://docs.python.org/3/library/ipaddress.html",
     "pyrax": "https://pypi.python.org/pypi/rackspacesdk",
-    "python-cloudfiles": "https://pypi.python.org/pypi/rackspacesdk"
+    "python-cloudfiles": "https://pypi.python.org/pypi/rackspacesdk",
     "python-digest": "https://pypi.python.org/pypi/python3-digest",
     "python-ldap": "https://pypi.python.org/pypi/pyldap",
     "python-openid": "https://github.com/necaris/python3-openid",
