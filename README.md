@@ -7,11 +7,11 @@ The code in this repo should be running on Bluemix at: http://python3wos.mybluem
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/cclauss/python3wos_asyncio)
 
 
-__90% of the top [501](https://python3wos.mybluemix.net/501) most downloaded [PyPI](http://pypi.python.org) packages (or their forks) support Python 3.__
+__90% of the top [514](https://python3wos.mybluemix.net/514) most downloaded [PyPI](http://pypi.python.org) packages (or their forks) support Python 3.__
 
-__Half of the top [5,436](https://python3wos.mybluemix.net/5436) most downloaded PyPI packages (or their forks) support Python 3.__
+__Half of the top [5,864](https://python3wos.mybluemix.net/5864) most downloaded PyPI packages (or their forks) support Python 3.__
 
-__31.20% of ALL PyPI packages (or their forks) support Python 3. Last updated: 2017-04-19__
+__32.35% of ALL PyPI packages (or their forks) support Python 3. Last updated: 2017-06-22__
 
 __Which of the top [5,000](http://python3wos.mybluemix.net/5000) most downloaded PyPI packages are Python 3 compatible?__
 
