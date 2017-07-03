@@ -6,9 +6,9 @@ python:
 #   - "2.7.13"
     - "3.6.1"
     - "nightly"  # Python 3.7.0a0 and pip 9.0.1  # currently points to 3.7-dev
-os:
-    - linux
-    - osx
+#os:
+#    - linux
+#    - osx
 # command to install dependencies
 install:
 #   - pip install --upgrade pip setuptools
