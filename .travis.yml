@@ -4,18 +4,24 @@ language: python
 cache: pip
 python:
 #   - "2.7.13"
-    - "3.6.0"
-    - "nightly"  # Python 3.7.0a0 and pip 7.1.2  # currently points to 3.7-dev
+    - "3.6.1"
+    - "nightly"  # Python 3.7.0a0 and pip 9.0.1  # currently points to 3.7-dev
+os:
+    - linux
+    - osx
 # command to install dependencies
 install:
-    - pip install --upgrade pip setuptools
+#   - pip install --upgrade pip setuptools
 #   - pip install -r requirements.txt
     - pip install flake8
 # preflight
 before_script:
-    flake8 . --count --max-line-length=127 --statistics   # 127 == GitHub editor width
+    # stop the build if there are Python syntax errors or undefined names
+    - flake8 . --count --select=E901,E999,F821 --statistics
+    # exit-zero treates all errors as warnings.  The GitHub editor is 127 chars wide
+    - flake8 . --count --exit-zero --max-line-length=127 --statistics
 script:
-    flake8 . --count --max-line-length=127 --select=E999  # Stop build on syntax errors
+    - flake8 . --count --max-line-length=127 --statistics
 notifications:
     on_success: change
     on_failure: always
