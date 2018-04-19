@@ -1,4 +1,4 @@
-pip
+pip==10.0.0
 aiohttp
 aiohttp_jinja2
 Jinja2
