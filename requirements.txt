@@ -1,4 +1,4 @@
 pip
 aiohttp
 aiohttp_jinja2
-Jinja2
+Jinja2==2.10
